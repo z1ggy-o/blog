@@ -180,8 +180,8 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       }
     },
 
-    // 自定义hmtl(广告)模块
-    htmlModules
+    // 自定义hmtl(广告)模块. 原来这个地方摆了一个公众号二维码
+    //htmlModules
   },
 
   // 注入到页面<head>中的标签，格式[tagName, { attrName: attrValue }, innerHTML?]
