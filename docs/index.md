@@ -1,13 +1,15 @@
 ---
+# 这是个 md 文档，这个部分是 frontmatter
 home: true
-# heroImage: /img/web.png
-heroText: Ziggy's blog
-tagline: 个人随笔和杂乱 Wiki
+#heroImage: /img/web.png
+heroText: Slow is Smooth, Smooth is Fast
+#tagline: 个人随笔和杂乱 Wiki
 # actionText: 立刻进入 →
 # actionLink: /web/
 # bannerBg: auto # auto => 网格纹背景(有bodyBgImg时无背景)，默认 | none => 无 | '大图地址' | background: 自定义背景样式       提示：如发现文本颜色不适应你的背景时可以到palette.styl修改$bannerTextColor变量
 
 #features: # 可选的
+# zgy: 出现在首页的 Banner 处，有需要以后可以开，不过不要用图片了
 #  - title: 前端
 #    details: JavaScript、ES6、Vue框架等前端技术
 #    link: /web/ # 可选
@@ -24,14 +26,15 @@ tagline: 个人随笔和杂乱 Wiki
 # 文章列表显示方式: detailed 默认，显示详细版文章列表（包括作者、分类、标签、摘要、分页等）| simple => 显示简约版文章列表（仅标题和日期）| none 不显示文章列表
 postList: detailed
 # simplePostListLength: 10 # 简约版文章列表显示的文章数量，默认10。（仅在postList设置为simple时生效）
-# hideRightBar: true # 是否隐藏右侧边栏
+hideRightBar: false # 是否隐藏右侧边栏
 ---
 
 
+<!-- 下面的内容会在页面上显示一个小熊猫 -->
 <!-- 小熊猫 -->
 <!-- <img src="/img/panda-waving.png" class="panda no-zoom" style="width: 130px;height: 115px;opacity: 0.8;margin-bottom: -4px;padding-bottom:0;position: fixed;bottom: 0;left: 0.5rem;z-index: 1;"> -->
 
-<!--
+<!-- 这里的内容会显示到页面的最后，因为上部被 theme 用来展示 blog 文章了
 ## 关于
 
 ### 📚Blog
@@ -83,4 +86,5 @@ postList: detailed
 - **Email**: <a href="mailto:894072666@qq.com">894072666@qq.com</a>
 - **GitHub**: <https://github.com/xugaoyi>
 
-</br>  -->
+</br> -->
+
