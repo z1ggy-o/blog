@@ -24,7 +24,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       description: 'Personal blogs and wikis',
     }
   },
-  // base: '/', // 默认'/'。如果你想将你的网站部署到如 https://foo.github.io/bar/，那么 base 应该被设置成 "/bar/",（否则页面将失去样式等文件）
+  base: '/blog/', // 默认'/'。如果你想将你的网站部署到如 https://foo.github.io/bar/，那么 base 应该被设置成 "/bar/",（否则页面将失去样式等文件）
 
   // 主题配置
   themeConfig: {
@@ -32,31 +32,41 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     nav: [
       { text: '首页', link: '/' },
       {
-        text: '前端',
-        link: '/web/', //目录页链接，此处link是vdoing主题新增的配置项，有二级导航时，可以点击一级导航跳到目录页
+        text: '系列文章',
+        // link: '/series/', //目录页链接，此处link是vdoing主题新增的配置项，有二级导航时，可以点击一级导航跳到目录页
         items: [
           // 说明：以下所有link的值只是在相应md文件头部定义的永久链接 permalink（不是什么特殊编码）。另外，注意结尾是有斜杠的
           {
-            text: '学习笔记',
-            items: [
-              {
-                text: '《Git》',
-                link: '/note/git/',
-              },
-            ],
-          },
+            text: 'Git',
+            link: '/pages/089ecd/',
+          }
+          // 可以继续嵌套层级
+        //   {
+        //     text: '学习笔记',
+        //     items: [
+        //       {
+        //         text: '《Git》',
+        //         link: '/series/git/',
+        //       },
+        //     ],
+        //   },
         ],
       },
-      // {
-      //   text: '技术',
-      //   link: '/technology/',
-      //   items: [
-      //     { text: '技术文档', link: '/pages/9a7ee40fc232253e/' },
-      //     { text: 'GitHub技巧', link: '/pages/4c778760be26d8b3/' },
-      //     { text: 'Nodejs', link: '/pages/117708e0af7f0bd9/' },
-      //     { text: '博客搭建', link: '/pages/41f87d890d0a02af/' },
-      //   ],
-      // },
+      {
+        text: '笔记',
+        // link: '/notes/', // 不需要单独自己的页面
+        items: [
+          { text: '读书笔记', link: '/booknotes/' },
+          { text: '论文笔记', link: '/papernotes/' },
+        ],
+      },
+      {
+        text: 'Logs',
+        link: '/logs/',
+        items: [
+          {text: '周记', link: '/logs/weekly/'},
+        ]
+      },
       // {
       //   text: '更多',
       //   link: '/more/',
@@ -83,7 +93,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         ],
       },
     ],
-    sidebarDepth: 2, // 侧边栏显示深度，默认1，最大2（显示到h3标题）
+    sidebarDepth: 1, // 侧边栏显示深度，默认1，最大2（显示到h3标题）
     // logo: '/img/logo.png', // 导航栏logo (blog 名字旁边，以后可以整一个自己的)
     // repo: 'xugaoyi/vuepress-theme-vdoing', // 导航栏右侧生成Github链接. 个人博客，就不需要加这个链接了。
     searchMaxSuggestions: 10, // 搜索结果显示最大数
@@ -100,7 +110,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     archive: true, // 是否打开归档功能，默认true
     // categoryText: '随笔', // 碎片化文章（_posts文件夹的文章）预设生成的分类值，默认'随笔'
 
-    // pageStyle: 'line', // 页面风格，可选值：'card'卡片 | 'line' 线（未设置bodyBgImg时才生效）， 默认'card'。 说明：card时背景显示灰色衬托出卡片样式，line时背景显示纯色，并且部分模块带线条边框
+    pageStyle: 'card', // 页面风格，可选值：'card'卡片 | 'line' 线（未设置bodyBgImg时才生效）， 默认'card'。 说明：card时背景显示灰色衬托出卡片样式，line时背景显示纯色，并且部分模块带线条边框
 
     // bodyBgImg: [
     //   'https://fastly.jsdelivr.net/gh/xugaoyi/image_store/blog/20200507175828.jpeg',
@@ -121,14 +131,14 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       moreArticle: '/archives' // “更多文章”跳转的页面，默认'/archives'
     },
     rightMenuBar: true, // 是否显示右侧文章大纲栏，默认true (屏宽小于1300px下无论如何都不显示)
-    // sidebarOpen: false, // 初始状态是否打开左侧边栏，默认true
+    sidebarOpen: true, // 初始状态是否打开左侧边栏，默认true
     // pageButton: false, // 是否显示快捷翻页按钮，默认true
 
     // 默认外观模式（用户未在页面手动修改过模式时才生效，否则以用户设置的模式为准），可选：'auto' | 'light' | 'dark' | 'read'，默认'auto'。
     // defaultMode: 'auto',
 
     // 侧边栏  'structuring' | { mode: 'structuring', collapsable: Boolean} | 'auto' | <自定义>    温馨提示：目录页数据依赖于结构化的侧边栏数据，如果你不设置为'structuring',将无法使用目录页
-    sidebar: 'structuring',
+    sidebar: {mode: 'structuring', collapsable: true},
 
     // 文章默认的作者信息，(可在md文件中单独配置此信息) string | {name: string, link?: string}
     author: {
